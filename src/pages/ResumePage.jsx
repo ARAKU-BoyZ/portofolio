@@ -1,14 +1,16 @@
-import { Avatar, Button, Link } from "@nextui-org/react"
+import { Avatar, Link } from "@nextui-org/react"
 import { FaGithub } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import ProgressApp from "../components/ProgressApp";
+import NavbarApp from "../components/NavbarApp";
 
 
 const Resume = () => {
     return (
         <div className="bg-gray-100">
-            <div className="container mx-auto py-8">
+            <NavbarApp />
+            <div className="mx-auto py-8">
                 <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
                     <div className="col-span-4 sm:col-span-3">
                         <div className="bg-white shadow rounded-lg p-6">
@@ -40,12 +42,10 @@ const Resume = () => {
                                         <ProgressApp value={75} />
                                     <li className="flex justify-between">React Js<span>80%</span></li>
                                         <ProgressApp value={85} />
-                                    <li>HTML <span>70%</span>
+                                    <li className="flex justify-between">HTML<span>70%</span></li>
                                         <ProgressApp value={70} />
-                                    </li>
-                                    <li>Tailwind CSS<span>75%</span>
+                                    <li className="flex justify-between">React Js<span>75%</span></li>
                                         <ProgressApp value={75} />
-                                    </li>
                                 </ul>
                             </div>
                         </div>

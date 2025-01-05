@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom"
-// import LandingPage from "./pages/LandingPage"
-// import Resume from "./pages/Resume"
 import { lazy, Suspense } from "react"
 
 const LandingPage = lazy(() => import("./pages/LandingPage"))
-const Resume = lazy(() => import("./pages/Resume"))
+const BlogPage = lazy(() => import("./pages/BlogPage"))
+const ResumePage = lazy(() => import("./pages/ResumePage"))
 
 
 function App() {
+
   return (
     <Routes>
       <Route element={
@@ -18,9 +18,15 @@ function App() {
 
       <Route element={
         <Suspense fallback={<p>Loading...</p>}>
-          <Resume />
+          <ResumePage />
         </Suspense>
       } path="/resume" />
+
+      <Route element={
+        <Suspense fallback={<p>Loading...</p>}>
+          <BlogPage />
+        </Suspense>
+      } path="/blog" />
     </Routes>
   )
 }

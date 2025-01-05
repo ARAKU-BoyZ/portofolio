@@ -1,21 +1,31 @@
-import { Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react"
+import { Link, NavbarMenu, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle } from "@nextui-org/react"
+import { useState } from "react"
 
 
 const NavbarApp = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
     return (
-        <Navbar isBlurred={false}
-        className="bg-white">
+        <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
+            <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} className="sm:hidden" />
             <NavbarBrand>
-                <p className="font-bold text-inherit">AdeeeRK</p>
+                <p>Adek Rahmat Kurniawan</p>
             </NavbarBrand>
-            <NavbarContent className="hidden sm:flex gap-4" justify="end">
+            <NavbarContent className="hidden sm:flex" justify="end">
                 <NavbarItem>
-                    <Link color="foregrounde">Home</Link>
+                    <Link href="/resume"color="foreground">About</Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground">About Me</Link>
+                    <Link href="/blog" color="foreground">Blog</Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link href="/contact" color="foreground">Contact</Link>
                 </NavbarItem>
             </NavbarContent>
+            <NavbarMenu>
+                <NavbarItem>About</NavbarItem>
+                <NavbarItem>Blog</NavbarItem>
+                <NavbarItem>Contact</NavbarItem>
+            </NavbarMenu>
         </Navbar>
     )
 }
