@@ -5,7 +5,7 @@ const LandingPage = () => {
     const navigate = useNavigate()
 
     const buttonClick = () => {
-        navigate('/resume')
+        navigate('/about')
     }
 
     const handleChat = () => {
